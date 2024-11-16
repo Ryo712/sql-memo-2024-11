@@ -15,3 +15,13 @@ GROUP BY purchased_at;
 GROUP BY句：purchased_at カラムを基準にレコードをグループ化します。
 purchased_at ごとに price の合計が計算され、それぞれの購入日時に基づく集計結果が返されます。
 */
+
+
+SELECT SUM(price), purchased_at
+FROM purchases
+GROUP BY purchased_at
+HAVING SUM(price) > 2000;
+/*HAVING句：HAVING 句は、GROUP BY でグループ化された各グループに対して条件を指定します。
+この条件では、SUM(price) が 2000 を超えるグループのみを選択します。
+HAVING は WHERE と似ていますが、WHERE はグループ化の前にレコードを絞り込むのに対し、HAVING はグループ化後の結果に条件を適用します。
+*/
