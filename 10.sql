@@ -25,3 +25,15 @@ HAVING SUM(price) > 2000;
 この条件では、SUM(price) が 2000 を超えるグループのみを選択します。
 HAVING は WHERE と似ていますが、WHERE はグループ化の前にレコードを絞り込むのに対し、HAVING はグループ化後の結果に条件を適用します。
 */
+
+SELECT SUM(price), purchased_at, character_name
+FROM purchases
+GROUP BY purchased_at, character_name
+HAVING SUM(price) > 3000;
+/*
+SELECT句：purchases テーブルから price カラムの合計 (SUM(price))、
+および purchased_at と character_name カラムを選択して取得します。
+
+SUM(price) はグループ化された各 purchased_at と character_name の組み合わせ内で計算されているので、
+SUM(price) はグループ化されています。
+*/
