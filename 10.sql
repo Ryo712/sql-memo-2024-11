@@ -37,3 +37,17 @@ SELECT句：purchases テーブルから price カラムの合計 (SUM(price))�
 SUM(price) はグループ化された各 purchased_at と character_name の組み合わせ内で計算されているので、
 SUM(price) はグループ化されています。
 */
+
+SELECT name AS "選手名", height AS "身長"
+FROM players
+WHERE height > (
+  SELECT AVG(height)
+  FROM players
+);
+
+/*
+SELECT句：AS を使用して、name カラムに「選手名」という別名を、height カラムに「身長」という別名をつけています。
+これにより、結果の表示時に列名が日本語で表示されます。
+内側のサブクエリ：players テーブルの height カラムの平均値を計算し、その結果を返します。
+このクエリを実行した結果、players テーブルにある選手のうち、平均身長を超える選手だけが選ばれます。
+*/
