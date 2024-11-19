@@ -51,3 +51,17 @@ SELECT句：AS を使用して、name カラムに「選手名」という別名
 内側のサブクエリ：players テーブルの height カラムの平均値を計算し、その結果を返します。
 このクエリを実行した結果、players テーブルにある選手のうち、平均身長を超える選手だけが選ばれます。
 */
+
+SELECT *
+FROM players
+JOIN countries
+ON players.country_id = countries.id
+WHERE countries.name = "日本"
+AND height >= 180;
+
+/*
+SELECT句：players テーブルと countries テーブルの結合結果から全てのカラムを取得します。
+JOIN句：players テーブルの country_id カラムと countries テーブルの id カラムを関連付けて、
+両テーブルを結合します。これにより、選手がどの国に所属しているかが紐付けられます。
+結果：結果として、日本出身の選手の中で身長が180以上の人の全ての情報が返されます。
+*/
