@@ -65,3 +65,19 @@ JOIN句：players テーブルの country_id カラムと countries テーブル
 両テーブルを結合します。これにより、選手がどの国に所属しているかが紐付けられます。
 結果：結果として、日本出身の選手の中で身長が180以上の人の全ての情報が返されます。
 */
+
+SELECT countries.name AS "国名", AVG(goals) AS "平均得点"
+FROM players
+JOIN countries
+ON players.country_id = countries.id
+GROUP BY countries.name;
+
+/*
+SELECT句：countries.name カラムの値を選択し、それに「国名」という別名を付けます。
+AVG(goals) は、各国の選手の得点 (goals) の平均値を計算し、それに「平均得点」という別名を付けます。
+結果として、国名とその国の選手の平均得点が表示されます。
+JOIN句：players テーブルと countries テーブルを結合します。
+players.country_id と countries.id をキーとして結合することで、選手とその所属国を紐付けます。
+GROUP BY句：countries.name を基準にデータをグループ化します。
+各国ごとに選手をまとめる。グループ化しないと、AVG(goals) のような集計関数を使うことはできない。
+*/
