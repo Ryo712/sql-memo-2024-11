@@ -81,3 +81,13 @@ players.country_id と countries.id をキーとして結合することで、�
 GROUP BY句：countries.name を基準にデータをグループ化します。
 各国ごとに選手をまとめる。グループ化しないと、AVG(goals) のような集計関数を使うことはできない。
 */
+
+SELECT SUM(price), character_name
+FROM purchases
+WHERE category = "雑費"
+GROUP BY character_name;
+
+/*
+WHERE句：条件として category カラムが「雑費」であるレコードのみを抽出します。
+GROUP BY句：各キャラクターごとに「雑費」カテゴリーの購入データがまとめられます。
+*/
