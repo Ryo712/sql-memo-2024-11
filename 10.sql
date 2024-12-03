@@ -91,3 +91,11 @@ GROUP BY character_name;
 WHERE句：条件として category カラムが「雑費」であるレコードのみを抽出します。
 GROUP BY句：各キャラクターごとに「雑費」カテゴリーの購入データがまとめられます。
 */
+
+SELECT *
+FROM purchases
+WHERE purchased_at <= "2017-08-01";
+
+/*
+purchased_atカラムが2017-08-01以前のデータを取得。
+*/
