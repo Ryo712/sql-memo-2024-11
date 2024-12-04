@@ -99,3 +99,18 @@ WHERE purchased_at <= "2017-08-01";
 /*
 purchased_atカラムが2017-08-01以前のデータを取得。
 */
+
+SELECT *
+FROM purchases
+WHERE name Like "%プリン%";
+/*
+ワイルドカード%：どんな文字列にも一致することを指す記号。
+nameカラムが'プリン'を含むデータを取得する。
+*/
+
+SELECT *
+FROM purchases
+WHERE NOT character_name = "にんじゃわんこ"; 
+/*
+NOT演算子：その条件を満たさないデータを取得する。
+*/
