@@ -114,3 +114,12 @@ WHERE NOT character_name = "にんじゃわんこ";
 /*
 NOT演算子：その条件を満たさないデータを取得する。
 */
+
+SELECT *
+FROM purchases
+WHERE category = "食費"
+AND character_name = "ひつじ仙人";
+
+/*
+ANDを用いて2つのカラムから対象のデータを取得する。（"食費"かつ"ひつじ仙人"）
+*/
