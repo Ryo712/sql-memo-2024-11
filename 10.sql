@@ -123,3 +123,12 @@ AND character_name = "ひつじ仙人";
 /*
 ANDを用いて2つのカラムから対象のデータを取得する。（"食費"かつ"ひつじ仙人"）
 */
+
+SELECT *
+FROM purchases
+ORDER BY price DESC
+LIMIT 5;
+
+/*
+priceカラムを基準に降順（大きい順）に並び替えたデータを最大で5件取得する。
+*/
