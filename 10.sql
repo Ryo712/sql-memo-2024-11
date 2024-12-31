@@ -36,6 +36,7 @@ SELECT句：purchases テーブルから price カラムの合計 (SUM(price))�
 
 SUM(price) はグループ化された各 purchased_at と character_name の組み合わせ内で計算されているので、
 SUM(price) はグループ化されています。
+（SUM(price)）が3000を超える場合に、そのグループを結果に含めます。
 */
 
 SELECT name AS "選手名", height AS "身長"
@@ -131,4 +132,16 @@ LIMIT 5;
 
 /*
 priceカラムを基準に降順（大きい順）に並び替えたデータを最大で5件取得する。
+*/
+
+SELECT countries.name AS "国名", 
+       AVG(goals) AS "平均得点"
+FROM players
+JOIN countries
+ON players.country_id = countries.id
+GROUP BY countries.name
+HAVING AVG(goals) >= 2;
+
+/*
+平均得点が2以上の国だけ表示する
 */
