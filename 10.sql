@@ -145,3 +145,14 @@ HAVING AVG(goals) >= 2;
 /*
 平均得点が2以上の国だけ表示する
 */
+
+SELECT countries.name AS "国名", 
+       AVG(goals) AS "平均得点", 
+       MAX(goals) AS "最高得点"
+FROM players
+JOIN countries
+ON players.country_id = countries.id
+GROUP BY countries.name;
+/*
+平均得点に加え、各国の最高得点も確認できるようにします。
+*/
